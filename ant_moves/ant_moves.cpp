@@ -32,7 +32,7 @@ int main()
     for (int i = 0;i < 100;++i) { std::cout << check[i] << " "; }
     */
 
-    ant main;
+    ant* main = new ant;
     int i = 0;
     bool flag;
 
@@ -42,13 +42,15 @@ int main()
       //  std::cout << i<< " ";
        // main.check_ant();
        // if (i %10==1) { main.god(); }
-        flag=main.ant_moves();
+        flag=main->ant_moves();
         if (!flag) { break; };
        // main.check_ant();
     }
     std::cout << i<<" ";
-    main.check_ant();
-    main.print_ant_box();
+    main->check_ant();
+    main->print_ant_box();
+
+    delete main;
 
     return 0;
 }
